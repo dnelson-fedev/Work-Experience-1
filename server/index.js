@@ -27,9 +27,3 @@ app.listen(PORT, () => {
 });
 
 
-function openModal() {
-  document.body.classList += " modal__container--open"
-}
-function closeModal() {
-  document.body.classList.remove("modal__container--open")
-}
