@@ -289,6 +289,11 @@ img {
   opacity: 1;
 }
 
+.modal__container--open {
+  max-height: 100vh;
+  overflow-y: hidden;
+}
+
 /* Home hero */
 
 .hero {
