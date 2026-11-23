@@ -19,10 +19,6 @@
   box-sizing: border-box;
 }
 
-html {
-  overflow-y: scroll;
-}
-
 body {
   margin: 0;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -230,6 +226,10 @@ img {
 .site-header--home .nav-links .btn {
   margin-left: 12px;
   padding: 10px 20px;
+}
+
+.site-header--home html {
+  overflow-y: scroll;
 }
 
 .modal__btn {
@@ -884,11 +884,11 @@ img {
     font-size: 34px;
   }
 
-  .logo {
+  .site-header--home .logo {
     font-size: 16px;
   }
 
-  .logo-mark {
+  .site-header--home .logo-mark {
     width: 28px;
     height: 28px;
     border-radius: 7px;
