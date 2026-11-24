@@ -228,6 +228,72 @@ img {
   padding: 10px 20px;
 }
 
+.site-header--home html {
+  overflow-y: scroll;
+}
+
+.modal__btn {
+  display: none;
+  color: var(--white);
+  background-color: transparent;
+  margin: 0;
+  padding: 6px;
+  box-shadow: 0;
+  border: 0;
+  cursor: pointer;
+}
+.modal__svg {
+  fill: var(--white);
+  width: 32px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.modal__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  position: absolute;
+  background-color: var(--ink);
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 300ms ease;
+  visibility: hidden;
+}
+
+.modal__container .nav-links {
+  flex-direction: column;
+  gap: 24px;
+  font-size: 24px;
+}
+
+.modal__container .nav-links .btn {
+  padding: 8px 24px;
+  font-size: 24px;
+}
+
+.modal__container .modal__btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.modal__container--open .modal__container {
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__container--open {
+  max-height: 100vh;
+  overflow-y: hidden;
+}
+
 /* Home hero */
 
 .hero {
@@ -746,6 +812,34 @@ img {
   padding-top: 24px;
 }
 
+@media (max-width: 1024px) {
+  .nav-links__homepage {
+    display: none;
+  }
+  .modal__btn {
+    display: flex;
+  }
+  .hero-inner {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+  .hero-media {
+    max-width: 100%;
+  }
+  .hero-image {
+    text-align: left;
+  }
+  .playbook-grid {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .playbook-grid .card {
+    width: calc(95% / 2);
+  }
+}
+
 @media (max-width: 768px) {
   h1 {
     font-size: 40px;
@@ -768,7 +862,9 @@ img {
   .feature-row--reverse .feature-media {
     order: 0;
   }
-
+  .playbook-grid .card {
+    width: 100%;
+  }
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -786,6 +882,16 @@ img {
 @media (max-width: 480px) {
   h1 {
     font-size: 34px;
+  }
+
+  .site-header--home .logo {
+    font-size: 16px;
+  }
+
+  .site-header--home .logo-mark {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
   }
 
   .card-grid {
