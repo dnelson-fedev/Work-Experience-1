@@ -847,15 +847,6 @@ img {
   .hero-image {
     text-align: left;
   }
-  .playbook-grid {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .playbook-grid .card {
-    width: calc(95% / 2);
-  }
 }
 
 @media (max-width: 768px) {
@@ -880,9 +871,7 @@ img {
   .feature-row--reverse .feature-media {
     order: 0;
   }
-  .playbook-grid .card {
-    width: 100%;
-  }
+  
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
   }
