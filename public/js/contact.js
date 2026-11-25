@@ -14,6 +14,11 @@ form.addEventListener('submit', async (event) => {
   const timeTaken = submitTime - initTime;
 
   if (timeTaken < 3000) {
+    form.reset();
+    initTime = Date.now();
+    statusEl.textContent = "Thanks, we'll be in touch shortly.";
+    statusEl.classList.add('form-status--success');
+    button.disabled = false;
     return
   }
 

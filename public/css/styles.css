@@ -744,6 +744,8 @@ img {
 
 #website {
   display: none;
+  position: absolute;
+  left: -9999px;
 }
 
 .form-status {
