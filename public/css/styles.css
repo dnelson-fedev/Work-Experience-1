@@ -742,6 +742,10 @@ img {
   resize: vertical;
 }
 
+#website {
+  display: none;
+}
+
 .form-status {
   margin-top: 16px;
   font-weight: 700;
