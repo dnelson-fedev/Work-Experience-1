@@ -14,21 +14,15 @@ form.addEventListener('submit', async (event) => {
   const timeTaken = submitTime - initTime;
 
   if (timeTaken < 3000) {
-    form.reset();
-    initTime = Date.now();
-    statusEl.textContent = "Thanks, we'll be in touch shortly.";
-    statusEl.classList.add('form-status--success');
+    formSuccess();
     button.disabled = false;
     return
   }
 
   const data = Object.fromEntries(new FormData(form));
 
-  if (!!data.website === true) {
-      form.reset();
-      initTime = Date.now();
-      statusEl.textContent = "Thanks, we'll be in touch shortly.";
-      statusEl.classList.add('form-status--success');
+  if (data.website) {
+      formSuccess();
       button.disabled = false;
   }
   else {
@@ -43,9 +37,7 @@ form.addEventListener('submit', async (event) => {
         throw new Error(result.error || 'Something went wrong.');
       }
 
-      form.reset();
-      statusEl.textContent = "Thanks, we'll be in touch within one business day.";
-      statusEl.classList.add('form-status--success');
+      formSuccess();
     } 
     catch (error) {
       statusEl.textContent = error.message || 'Something went wrong. Please email hello@calicomedia.co instead.';
@@ -56,3 +48,10 @@ form.addEventListener('submit', async (event) => {
     }
   }
 });
+
+function formSuccess() {
+  form.reset();
+  initTime = Date.now();
+  statusEl.textContent = "Thanks, we'll be in touch within one business day.";
+  statusEl.classList.add('form-status--success');
+}
